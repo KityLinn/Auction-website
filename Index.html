@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="./dist/css/index.css">
     <script src="https://kit.fontawesome.com/f030c15e73.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,32 +16,59 @@
 <body>
     <header>
         <nav class="navbar bg-primary justify-content-start mb-5">
-            <button class="btn btn-outline-tertiary bg-white ms-3 mb-2" type="button" id="signup">Sign up</button>
+            <button class="btn btn-outline-tertiary bg-white ms-3 mb-2" type="button" id="signup" data-bs-toggle="modal" data-bs-target="#signupModal">Sign up</button>
         </nav>
     </header>
+    
     <main>
-        <section class="form-signin py-5 d-flex justify-content-center">
-            <form class="max-container form-signin d-flex flex-column gap-2 border border-2 border-primary rounded shadow p-5">
-              <h1 class="h2 fw-normal mb-4 text-center">Login</h1>
-              <div class="form-floating">
-                <input type="email" id="login-email" name="email" class="form-control" placeholder="name@noroff.no"/>
-                <label for="login-email" class="fw-medium">Email address</label>
-              </div>
-              <div class="form-floating">
-                <input type="password" id="login-password" name="password" class="form-control" placeholder="Password"/>
-                <label for="login-password" class="fw-medium">Password</label>
-              </div>
-              <div>
-              <div class="d-flex justify-content-between pt-2 w-100">
-                <button class="btn btn-primary btn-lg text-white" type="submit" id="login">Login</button>
-                <button class="btn btn-outline-tertiary btn-lg" type="submit" id="signup">Sign up</button>
-              </div>
-              </div>
-              <div id="errors-div" class="d-flex flex-column text-danger">
-              </div>
-            </form>
-          </section>
+      <section class="form-signin py-5 d-flex justify-content-center align-items-center flex-column">
+        <form class="max-container form-signin d-flex flex-column gap-2 border border-2 border-primary rounded shadow p-5">
+          <h1 class="h2 fw-normal mb-4 text-center">Login</h1>
+          <div class="form-floating">
+            <input type="email" id="login-email" name="email" class="form-control" placeholder="name@noroff.no" />
+            <label for="login-email" class="fw-medium">Email address</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" id="login-password" name="password" class="form-control" placeholder="Password" />
+            <label for="login-password" class="fw-medium">Password</label>
+          </div>
+          <div>
+            <div class="d-flex justify-content-between pt-2 w-100">
+              <button class="btn btn-primary btn-lg text-white" type="submit" id="login">Login</button>
+              <button class="btn btn-outline-tertiary btn-lg" type="button" id="signup" data-bs-toggle="modal" data-bs-target="#signupModal">Sign up</button>
+            </div>
+          </div>
+          <div id="errors-div" class="d-flex flex-column text-danger">
+          </div>
+        </form>
+            <!-- Modal -->
+        <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModal" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content d-flex align-items-center">
+              <form class="max-container form-signin d-flex flex-column gap-2 border border-2 border-primary rounded shadow p-5">
+                <h1 class="h2 fw-normal mb-4 text-center">Register</h1>
+                <div class="form-floating">
+                  <input type="email" id="login-email" name="email" class="form-control" placeholder="name@noroff.no" />
+                  <label for="login-email" class="fw-medium">Email address</label>
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="login-name" name="name" class="form-control" placeholder="Username"/>
+                  <label for="login-email" class="fw-medium">Username</label>
+                </div>
+                <div class="form-floating">
+                  <input type="password" id="login-password" name="password" class="form-control" placeholder="Password" />
+                  <label for="login-password" class="fw-medium">Password</label>
+                </div>
+                <div class="d-flex justify-content-between pt-2 w-100">
+                  <button type="button" class="btn btn-primary btn-lg text-white" data-bs-dismiss="modal">Register</button>
+                  <button type="button" class="btn btn-outline-tertiary btn-lg" data-bs-dismiss="modal">Login</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
 
+      </section>
     </main>
 
     <footer class="py-3 mt-5 bg-primary">
