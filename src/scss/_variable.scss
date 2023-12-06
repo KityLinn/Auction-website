@@ -10,6 +10,10 @@ $theme-colors: (
   tertiary: $tertiary,
 );
 
+.max-container {
+  width: 100%;
+  max-width: 500px;
+}
 
 body {
   font-family: 'Roboto', sans-serif;
