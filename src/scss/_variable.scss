@@ -1,0 +1,20 @@
+
+$primary: #0C87F2;
+$secondary: #63B0F2;
+$tertiary: #F24C3D;
+
+
+$theme-colors: (
+  primary: $primary,
+  secondary: $secondary,
+  tertiary: $tertiary,
+);
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lora', serif;
+}
