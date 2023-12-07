@@ -1,8 +1,8 @@
+// main theme colors
 
 $primary: #0C87F2;
 $secondary: #63B0F2;
 $tertiary: #F24C3D;
-
 
 $theme-colors: (
   primary: $primary,
@@ -14,7 +14,7 @@ $theme-colors: (
   width: 100%;
   max-width: 500px;
 }
-
+// fonts
 body {
   font-family: 'Roboto', sans-serif;
 }
@@ -22,3 +22,38 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Lora', serif;
 }
+
+// off canvas customization
+$offcanvas-horizontal-width: 200px;
+$offcanvas-bottom: auto;
+
+.offcanvas {
+  bottom: auto  !important;
+}
+
+
+
+
+/*
+.form-group {
+    border:  solid black 2px;
+    padding: 30px;
+}
+.post {
+    width: 400px;
+    max-width: 400px;
+    border: solid black 2px;
+    padding: 20px;
+}
+
+.image {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
+*/
