@@ -12,7 +12,7 @@ $theme-colors: (
 
 .max-container {
   width: 100%;
-  max-width: 500px;
+  max-width: 550px;
 }
 // fonts
 body {
@@ -25,13 +25,64 @@ h1, h2, h3, h4, h5, h6 {
 
 // off canvas customization
 $offcanvas-horizontal-width: 200px;
-$offcanvas-bottom: auto;
 
 .offcanvas {
   bottom: auto  !important;
 }
 
+// custom P font variables
 
+.p6, .p5, .p4, .p3, .p2, .p1 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--bs-heading-color);
+}
+
+.p1 {
+  font-size: calc(1.375rem + 1.5vw);
+}
+@media (min-width: 1200px) {
+  .p1 {
+    font-size: 2.5rem;
+  }
+}
+
+ .p2 {
+  font-size: calc(1.325rem + 0.9vw);
+}
+@media (min-width: 1200px) {
+  .p2 {
+    font-size: 2rem;
+  }
+}
+
+ .p3 {
+  font-size: calc(1.3rem + 0.6vw);
+}
+@media (min-width: 1200px) {
+ .p3 {
+    font-size: 1.75rem;
+  }
+}
+
+ .p4 {
+  font-size: calc(1.275rem + 0.3vw);
+}
+@media (min-width: 1200px) {
+  .p4 {
+    font-size: 1.5rem;
+  }
+}
+
+.p5 {
+  font-size: 1.25rem;
+}
+
+.p6 {
+  font-size: 1rem;
+}
 
 
 /*
