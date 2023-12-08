@@ -14,6 +14,13 @@ $theme-colors: (
   width: 100%;
   max-width: 550px;
 }
+
+.max-section{
+  width: 100%;
+  max-width: 1100px;
+
+
+}
 // fonts
 body {
   font-family: 'Roboto', sans-serif;
@@ -85,13 +92,14 @@ $offcanvas-horizontal-width: 200px;
 }
 
 .image {
-  max-width: 300px;
+  max-height: 250px;
   margin-left: auto;
   margin-right: auto;
+  object-fit: cover;
+  object-position: center;
 }
 
 img {
-  height: 100%;
   width: 100%;
 }
 
