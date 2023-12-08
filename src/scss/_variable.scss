@@ -84,6 +84,17 @@ $offcanvas-horizontal-width: 200px;
   font-size: 1rem;
 }
 
+.image {
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+
 
 /*
 .form-group {
