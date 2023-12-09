@@ -55,6 +55,26 @@
     <main class="container">
         <section class="row">
             <div class="col-12 col-md-6 mx-auto my-auto">
+                <h1 class="fw-normal mb-4 text-center">Create New Listing</h1>
+                <form>
+                    <div class="form-floating mb-5">
+                        <input type="text" id="imageurl" name="imageurl" class="form-control" placeholder="Item image url" />
+                        <label for="imageurll" class="fw-medium">Item image url</label>
+                    </div>
+                    <div class="form-floating mb-5">
+                        <input type="text" id="itemtitle" name="itemtitle" class="form-control" placeholder="Item title" />
+                        <label for="itemtitle" class="fw-medium">Item title</label>
+                    </div>
+                    <div class="form-floating mb-5">
+                        <textarea  id="itemdesc" name="itemdesc" class="textarea" placeholder="Item description"></textarea>
+                    </div>
+                    <div class="form-floating mb-5">
+                        <input type="text" id="tags" name="tags" class="form-control" placeholder="Tags" />
+                        <label for="tags" class="fw-medium">Tags</label>
+                    </div>
+                    <button id="listItem" class="btn btn-primary btn-lg text-white" type="submit" >Create Listing</button>
+                </form>
+                
 
             </div>
         </section>
