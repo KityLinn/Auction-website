@@ -1,4 +1,5 @@
-import { logoutFunc } from "./logout.js";
+import { urls } from "./module.mjs";
+
 const logoutButton = document.querySelector("#logout");
 
 logoutButton.addEventListener("click", (e) => {
@@ -6,4 +7,4 @@ logoutButton.addEventListener("click", (e) => {
     logoutFunc()
 });
 
-console.log(logoutButton)
+
