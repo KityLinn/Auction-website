@@ -1,4 +1,4 @@
-const logoutButton = document.querySelector("#logout");
+const logoutButtons = document.querySelectorAll(".logout");
 
 export const logoutFunc = ( ) => {
     localStorage.removeItem("token");
@@ -6,7 +6,9 @@ export const logoutFunc = ( ) => {
     window.location.href = "../../index.html"
 }
 
-logoutButton.addEventListener("click", (e) => {
-    e.preventDefault()
-    logoutFunc()
-});
+logoutButtons.forEach(function(button) {
+    button.addEventListener("click", function(e) {
+      e.preventDefault()
+      logoutFunc()
+    });
+  });
