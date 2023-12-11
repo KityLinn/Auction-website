@@ -19,7 +19,7 @@ export const itemRender =  (data) => {
      } else if (!bids.length) {
         return `<div class="col-md-3 col-sm-6">
         <div class="card text-center">
-        <img class="image" src="https://placehold.co/400?text=No+Image+Found"  alt="No Image Found">
+        <img class="image" src="${media[0]}"  alt="${title}">
           <h4 class="pt-3">${title}</h4>
           <div class="row">
             <div class="col-md-6 col-sm-6">

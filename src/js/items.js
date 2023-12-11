@@ -21,6 +21,6 @@ export const fetchItems = async (url) => {
       main.innerHTML = html;
 };
 
-fetchItems(auctionUrls.listings(100))
+fetchItems(auctionUrls.listings(10))
 
 
