@@ -4,7 +4,7 @@ export const auctionUrls = {
     login: BASE_URL + "auction/auth/login",
     register: BASE_URL + "auction/auth/register",
     editAvatar: (name) => BASE_URL + `auction/profiles/${name}/media`,
-    listings: (amount) => BASE_URL + `auction/listings?limit=${amount}&_seller=true$_bids=true`,
+    listings: (amount) => BASE_URL + `auction/listings?limit=${amount}&_seller=true&_bids=true`,
     listing: (id) => BASE_URL + `auction/listings/${id}?_seller=true$_bids=true`,
     createEntry: BASE_URL + `auction/listings`,
     updateEntry: (id) => BASE_URL + `auction/listings/${id}`,
@@ -13,7 +13,7 @@ export const auctionUrls = {
     allProfiles: BASE_URL + `auction/profiles?_listings`,
     singleProfile: (name) => BASE_URL + `auction/profiles/${name}`,
     singleProfilelistings: (name) => BASE_URL + `auction/profiles/${name}/listings`,
-    search: BASE_URL + `auction/listings?_seller=true$_bids=true`,
+    search: BASE_URL + `auction/listings?_seller=true&_bids=true`,
   };
 
   

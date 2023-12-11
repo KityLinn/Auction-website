@@ -1,10 +1,26 @@
-import { urls } from "./module.mjs";
+import { auctionUrls } from "./module.mjs";
+import {itemRender} from "./itemposts.js";
 
-const logoutButton = document.querySelector("#logout");
+export const fetchItems = async (url) => {
+    const token = localStorage.getItem("token");
+    const res = await fetch(url, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    }); 
+    const data = await res.json();
+    console.log(data)
+    let main = document.querySelector("#items");
+    main.innerHTML = "";
+    let html = "";
+    for (let i = 0; i < data.length; i++) {
+        html += itemRender(data[i]);
+      }
+      main.innerHTML = html;
+}
 
-logoutButton.addEventListener("click", (e) => {
-    e.preventDefault()
-    logoutFunc()
-});
+fetchItems(auctionUrls.listings(10))
 
 
