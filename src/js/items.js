@@ -19,7 +19,7 @@ export const fetchItems = async (url) => {
         html += itemRender(data[i]);
       }
       main.innerHTML = html;
-}
+};
 
 fetchItems(auctionUrls.listings(10))
 

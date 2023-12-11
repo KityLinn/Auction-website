@@ -1,5 +1,5 @@
 export const itemRender =  (data) => {
-    let {title, id, seller, media} = data;
+    let {title, id, seller, media, bids} = data;
     if (media.length === 0) {
         return `<div class="col-md-3 col-sm-6">
         <div class="card text-center">
@@ -9,7 +9,7 @@ export const itemRender =  (data) => {
               <a href="../../singleitem.html?id=${id}" role="button" class="btn btn-link text-black">View Item</a>
             </div>
             <div class="col-md-6 col-sm-6">
-              <p class="p6">Current Bid: 50</p>
+              <p class="p6">Current Bid: ${bids[bids.length - 1].amount}</p>
             </div>
             <a class="p5" href="">By: ${seller.name}</a>
           </div>
@@ -25,12 +25,12 @@ export const itemRender =  (data) => {
               <a href="../../singleitem.html?id=${id}" role="button" class="btn btn-link text-black">View Item</a>
             </div>
             <div class="col-md-6 col-sm-6">
-              <p class="p6">Current Bid: 50</p>
+               <p class="p6">Current Bid: ${bids[bids.length - 1].amount}</p>
             </div>
             <a class="p5" href="">By: ${seller.name}</a>
           </div>
         </div>
       </div>`
      }
-    }
+    };
  
