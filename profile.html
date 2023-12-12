@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script type="module" src="./src/js/logout.js"></script>
+  <script type="module" src="./src/js/profile.js"></script>
   <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="./dist/css/index.css">
   <script src="https://kit.fontawesome.com/f030c15e73.js" crossorigin="anonymous"></script>
@@ -52,15 +53,15 @@
 
   <main>
     <section class="d-flex align-items-center flex-column py-5 px-3">
-      <h1 class="fw-normal mb-4 text-center">Your Profile</h1>
+      <h1 class="fw-normal mb-4 text-center" id="profile">Your Profile</h1>
       <div class="max-container d-flex flex-column align-items-center gap-4 bg-primary rounded shadow p-5">
         <div></div>
         <div class="text-white">
-          <h2>Jane Doe</h2>
+          <h2 id="user-name">Jane Doe</h2>
         </div>
-        <div class="text-white">Your Total Credits: 1000</div>
+        <div class="text-white" id="user-credits">Your Total Credits: 1000</div>
         <div class="text-white">
-          <button class="btn btn-outline-tertiary btn-lg bg-white" type="button" id="signup" data-bs-toggle="modal"
+          <button class="btn btn-outline-tertiary btn-lg bg-white" type="button" id="add-avatar" data-bs-toggle="modal"
             data-bs-target="#avatarModal">Add Avatar</button>
         </div>
       </div>
@@ -70,7 +71,7 @@
           <div class="modal-content d-flex align-items-center">
             <form
               class="max-container form-signin d-flex flex-column gap-2 border border-2 border-primary rounded shadow p-5">
-              <h2 class="fw-normal mb-4 text-center">Ad Avatar</h2>
+              <h2 class="fw-normal mb-4 text-center">Add Avatar</h2>
               <div class="form-floating">
                 <input type="text" id="imageURL" name="imageURL" class="form-control" placeholder="url" />
                 <label for="imageURL" class="fw-medium">URL</label>

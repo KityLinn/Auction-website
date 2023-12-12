@@ -10,7 +10,7 @@ const itemHtml =
       <div class="col-md-6 col-sm-6">
         <p class="p6">Current Bid: <span class="card-bid"></span></p>
       </div>
-      <a class="p5" href="">By:<span class="card-by"></span></a>
+      <a class="p5 card-by" href=""></a>
     </div>
   </div>
 `;
@@ -36,14 +36,17 @@ export const itemRender =  (data) => {
     cardTitle.innerText = title
     cardLink.href = `../../singleitem.html?id=${id}`
     cardBid.innerText = bids[bids.length - 1].amount
-    cardBy.innerText = seller.name
+    cardBy.innerText = `By: ${seller.name}`
+    cardBy.href = `../../profile.html?user=${seller.name}`
+    
 
   } else if (!bids.length) {
     cardTitle.innerText = title
     cardImage.src = media[0]
     cardImage.alt = title
     cardLink.href = `../../singleitem.html?id=${id}`
-    cardBy.innerText = seller.name
+    cardBy.innerText = `By: ${seller.name}`
+    cardBy.href = `../../profile.html?user=${seller.name}`
 
   } else {
     cardTitle.innerText = title
@@ -51,7 +54,8 @@ export const itemRender =  (data) => {
     cardImage.alt = title
     cardBid.innerText = bids[bids.length - 1].amount
     cardLink.href = `../../singleitem.html?id=${id}`
-    cardBy.innerText = seller.name
+    cardBy.innerText = `By: ${seller.name}`
+    cardBy.href = `../../profile.html?user=${seller.name}`
 
   }
   return container
