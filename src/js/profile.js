@@ -1,4 +1,5 @@
 import { auctionUrls } from "./module.mjs";
+import {profileItems} from "./profileposts.js";
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
@@ -49,3 +50,23 @@ const otherUser = (data) => {
     profile.innerText = `${name} Profile`
     addAvatar.classList = "d-none"
  };
+
+ const getuserPosts = async (url) => { 
+    const token = localStorage.getItem("token");
+    const res = await fetch(url, {
+		method: "GET",
+		headers: {
+			"Content-Type": "application/json",
+			Authorization: `Bearer ${token}`,
+		},
+	});
+    const data = await res.json();
+    console.log(data)
+    let main = document.querySelector("#profile-listings");
+    main.innerHTML = "";
+    for (let i = 0; i < data.length; i++) {
+        main.appendChild(profileItems(data[i]))
+      }   
+};
+
+getuserPosts(auctionUrls.singleProfilelistings(user))

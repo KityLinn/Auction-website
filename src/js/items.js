@@ -1,5 +1,5 @@
 import { auctionUrls } from "./module.mjs";
-import {itemRender} from "./itemposts.js";
+
 
 export const fetchItems = async (url) => {
     const token = localStorage.getItem("token");
@@ -15,7 +15,7 @@ export const fetchItems = async (url) => {
     let main = document.querySelector("#items");
     main.innerHTML = "";
     for (let i = 0; i < data.length; i++) {
-        main.appendChild(itemRender(data[i]))
+        main.appendChild((data[i]))
       }   
 };
 
