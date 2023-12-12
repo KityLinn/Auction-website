@@ -14,11 +14,9 @@ export const fetchItems = async (url) => {
     console.log(data)
     let main = document.querySelector("#items");
     main.innerHTML = "";
-    let html = "";
     for (let i = 0; i < data.length; i++) {
-        html += itemRender(data[i]);
-      }
-      main.innerHTML = html;
+        main.appendChild(itemRender(data[i]))
+      }   
 };
 
 fetchItems(auctionUrls.listings(10))
