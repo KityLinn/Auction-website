@@ -5,7 +5,7 @@ const itemEnds = document.querySelector("#item-ends");
 const itemBy = document.querySelector("#item-by");
 const itemBid = document.querySelector("#item-bid");
 const itemDescription = document.querySelector("#item-description")
-const image = document.querySelector(".image");
+const image = document.querySelector("#image");
 
 
 const queryString = document.location.search;
@@ -34,7 +34,7 @@ const singleRender = (data) => {
     itemDescription.innerText = description;
     itemBy.innerText =seller.name
     itemBid.innerText= bids[bids.length - 1].amount
-    itemEnds.innerText = endsAt
+    itemEnds.innerText = endsAt.substring(0, 10)
     image.src = media[0]
     image.alt = title
 }
