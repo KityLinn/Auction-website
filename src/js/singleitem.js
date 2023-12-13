@@ -6,6 +6,8 @@ const itemBy = document.querySelector("#item-by");
 const itemBid = document.querySelector("#item-bid");
 const itemDescription = document.querySelector("#item-description")
 const image = document.querySelector("#image");
+const bidsAppend = document.querySelector("#bids")
+
 
 
 const queryString = document.location.search;
@@ -37,4 +39,28 @@ const singleRender = (data) => {
     itemEnds.innerText = endsAt.substring(0, 10)
     image.src = media[0]
     image.alt = title
+    for (let i = 0; i < bids.length; i++) {
+        bidsAppend.appendChild(bidRender(bids[i]))
+        
+      }
 }
+
+const bidRender =  (bids) => {
+    let container = document.createElement('div');
+    container.classList.add("row");
+    container.innerHTML = itemHtml;
+    let bidName = container.querySelector(".bid-name");
+    let bidValue = container.querySelector(".bid-value");
+    bidName.innerText = bids.bidderName;
+    bidValue.innerText= bids.amount;
+    return container
+ }
+
+ const itemHtml = `
+ <div class="col-6">
+ <p class="p6"><span class="bid-name"></span></p>
+</div>
+<div class="col-6">
+ <p class="p6">Bid: <span class="bid-value"></span></p>
+</div>
+</div>`;
