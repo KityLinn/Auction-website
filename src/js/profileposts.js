@@ -16,7 +16,7 @@ const itemHtml =
 `;
 
 export const profileItems =  (data) => {
-  let {title, id, media, bids} = data;
+  let {title, id, seller, media, bids} = data;
 
   //lage DOM element som skal settes inn senere
   let container = document.createElement('div');
@@ -34,7 +34,20 @@ export const profileItems =  (data) => {
   //setter inn data
   if (!media.length) {
     cardTitle.innerText = title
-    cardLink.href = `../../singleitem.html?id=${id}`    
+    cardLink.href = `../../singleitem.html?id=${id}`
+    cardBid.innerText = bids[bids.length - 1].amount
+    cardBy.innerText = `By: ${seller.name}`
+    cardBy.href = `../../profile.html?user=${seller.name}`
+    
+
+  } else if (!bids.length) {
+    cardTitle.innerText = title
+    cardImage.src = media[0]
+    cardImage.alt = title
+    cardLink.href = `../../singleitem.html?id=${id}`
+    cardBid.innerText = "None"
+    cardBy.innerText = `By: ${seller.name}`
+    cardBy.href = `../../profile.html?user=${seller.name}`
 
   } else {
     cardTitle.innerText = title

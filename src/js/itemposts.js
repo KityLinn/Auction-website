@@ -45,6 +45,7 @@ export const itemRender =  (data) => {
     cardImage.src = media[0]
     cardImage.alt = title
     cardLink.href = `../../singleitem.html?id=${id}`
+    cardBid.innerText = "None"
     cardBy.innerText = `By: ${seller.name}`
     cardBy.href = `../../profile.html?user=${seller.name}`
 

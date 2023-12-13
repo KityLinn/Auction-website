@@ -12,7 +12,7 @@ export const auctionUrls = {
     makeBid: (id) => BASE_URL + `auction/listings/${id}/bids`,
     allProfiles: BASE_URL + `auction/profiles?_listings`,
     singleProfile: (name) => BASE_URL + `auction/profiles/${name}`,
-    singleProfilelistings: (name) => BASE_URL + `auction/profiles/${name}/listings`,
+    singleProfilelistings: (name) => BASE_URL + `auction/profiles/${name}/listings?_seller=true&_bids=true`,
     search: BASE_URL + `auction/listings?_seller=true&_bids=true`,
   };
 
