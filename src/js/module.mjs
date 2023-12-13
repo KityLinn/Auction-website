@@ -5,7 +5,7 @@ export const auctionUrls = {
     register: BASE_URL + "auction/auth/register",
     editAvatar: (name) => BASE_URL + `auction/profiles/${name}/media`,
     listings: (amount) => BASE_URL + `auction/listings?limit=${amount}&_seller=true&_bids=true`,
-    listing: (id) => BASE_URL + `auction/listings/${id}?_seller=true$_bids=true`,
+    listing: (id) => BASE_URL + `auction/listings/${id}?_seller=true&_bids=true`,
     createEntry: BASE_URL + `auction/listings`,
     updateEntry: (id) => BASE_URL + `auction/listings/${id}`,
     deleteEntry: (id) => BASE_URL + `auction/listings/${id}`,

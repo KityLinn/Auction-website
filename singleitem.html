@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="./src/js/singleitem.js"></script>
     <script type="module" src="./src/js/header.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="./dist/css/index.css">
@@ -57,23 +58,23 @@
             <div class="col-12 col-md-6 mx-auto my-auto">
                 <section class="row row-gap-4 border-bottom border-3">
                     <div class="col-12">
-                        <img src="./keagan-henman-TLifm8L8eM8-unsplash.jpg" class="image" alt="...">
+                        <img src="https://placehold.co/400?text=No+Image+Found" class="image" alt="No image found">
                     </div>
                     <div class="row">
                         <div class="col-6">
-                            <p class="p5 fw-bold">Backpack</p>
-                            <p class="p6">Ends at: 2023-12-23</p>
-                            <p class="p6">By: Jane Doe</p>
+                            <p class="p5 fw-bold"><span id="item-title"></span></p>
+                            <p class="p6">Ends at: <span id="item-ends"></span></p>
+                            <p class="p6">By: <span id="item-by"></span></p>
                         </div>
                         <div class="col-6 text-end">
-                            <p class="p5">Bid: 50</p>
+                            <p class="p5">Bid: <span id="item-bid"></span></p>
                         </div>
                     </div>
                 </section>
                 <section class="row row-gap-4 border-bottom border-3">
                     <h2 class="fw-bold my-4 text-center">Description</h2>
                     <div class="col-12">
-                        <p class="p6">A well used backpack</p>
+                        <p class="p6"><span id="item-description"></span></p>
                     </div>
                 </section>
                 <section class="row row-gap-4 border-bottom border-3">
