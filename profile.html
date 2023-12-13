@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script type="module" src="./src/js/logout.js"></script>
+  <script type="module" src="./src/js/header.js"></script>
   <script type="module" src="./src/js/profile.js"></script>
   <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="./dist/css/index.css">
@@ -32,20 +32,22 @@
           </button>
         </div>
         <ul class="offcanvas-body gap-3 d-flex flex-column list-unstyled">
-          <li class="d-flex gap-2 p5"><i class="fa-solid fa-user"></i>Your Profile</li>
+          <li class="d-flex gap-2 p5"><i class="fa-solid fa-user"></i><a
+              class="text-reset text-decoration-none your-profile" href="">Your Profile</a></li>
           <li class="d-flex gap-2 p5"><i class="fa-solid fa-gavel"></i><a class="text-reset text-decoration-none"
               href="./items.html">Item Listings</a></li>
-          <li class="d-flex gap-2 p5"><i class="fa-solid fa-square-plus"></i>New Item</li>
+          <li class="d-flex gap-2 p5"><i class="fa-solid fa-square-plus"></i><a class="text-reset text-decoration-none"
+              href="./newitem.html">New Item</a></li>
           <li class="d-flex gap-2 p5 logout"><i class="fa-solid fa-door-open"></i>Logout</li>
         </ul>
       </div>
     </nav>
     <nav class="navbar d-none d-md-flex bg-primary mb-5">
       <ul class="offcanvas-body gap-3 d-flex flex-row pt-3 ms-5 list-unstyled">
-        <li class="text-white p6">Your Profile</li>
-        <li class=" text-white p6"><a class="text-reset text-decoration-none" href="./items.html">Item Listings</a>
+        <li class="text-white p6"><a class="text-reset text-decoration-none your-profile" href="">Your Profile</a></li>
+        <li class="text-white p6"><a class="text-reset text-decoration-none" href="./items.html">Item Listings</a>
         </li>
-        <li class=" text-white p6"></i>New Item</li>
+        <li class="text-white p6"></i><a class="text-reset text-decoration-none" href="./newitem.html">New Item</a></li>
       </ul>
       <button class="btn btn-outline-tertiary btn bg-white me-3 logout" type="button">Logout</button>
     </nav>
