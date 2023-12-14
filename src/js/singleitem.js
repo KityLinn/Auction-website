@@ -1,4 +1,5 @@
 import { auctionUrls } from "./module.mjs";
+import {singleRender} from "./singlerender.mjs"
 
 const itemTitle = document.querySelector("#item-title");
 const itemEnds = document.querySelector("#item-ends");
@@ -7,6 +8,8 @@ const itemBid = document.querySelector("#item-bid");
 const itemDescription = document.querySelector("#item-description")
 const image = document.querySelector("#image");
 const bidsAppend = document.querySelector("#bids")
+
+let singleData = {itemTitle, itemEnds, itemBy, itemBid, itemDescription, image, bidsAppend}
 
 
 
@@ -24,53 +27,9 @@ const getsingleItem = async (url) => {
 		},
 	});
     const data = await res.json();
-    singleRender(data)
+    singleRender(data, singleData)
     console.log(data)
 };
 
 getsingleItem(auctionUrls.listing(ID))
 
-const singleRender = (data) => {
-    let {title, description, endsAt, id, media, seller, bids} = data;
-    itemTitle.innerText = title;
-    itemDescription.innerText = description;
-    itemBy.innerText =seller.name
-    if (!bids.length) {
-        itemBid.innerText="None"
-    }
-    else {
-        itemBid.innerText= bids[bids.length - 1].amount
-
-    }
-    itemEnds.innerText = endsAt.substring(0, 10)
-    if (!media.length) {
-        image.src = "https://placehold.co/400?text=No+Image+Found"
-    }
-    else {
-        image.src = media[0]
-    }
-    image.alt = title
-    for (let i = 0; i < bids.length; i++) {
-        bidsAppend.appendChild(bidRender(bids[i]))   
-      }
-}
-
-const bidRender =  (bids) => {
-    let container = document.createElement('div');
-    container.classList.add("row");
-    container.innerHTML = itemHtml;
-    let bidName = container.querySelector(".bid-name");
-    let bidValue = container.querySelector(".bid-value");
-    bidName.innerText = bids.bidderName;
-    bidValue.innerText= bids.amount;
-    return container
- }
-
- const itemHtml = `
- <div class="col-6">
- <p class="p6"><span class="bid-name"></span></p>
-</div>
-<div class="col-6">
- <p class="p6">Bid: <span class="bid-value"></span></p>
-</div>
-</div>`;

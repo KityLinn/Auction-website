@@ -1,6 +1,6 @@
 import { auctionUrls } from "./module.mjs";
-import {loginFunc} from "./login.js";
-import {regFunc} from "./register.js"
+import {loginFunc} from "./login.mjs";
+import {regFunc} from "./register.mjs"
 
 
 // login field data

@@ -1,5 +1,5 @@
 import { auctionUrls } from "./module.mjs";
-import {profileItems} from "./profileposts.js";
+import {profileItems} from "./profileposts.mjs";
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);

@@ -1,5 +1,5 @@
 import { auctionUrls } from "./module.mjs";
-import {itemRender} from "./itemposts.js";
+import {itemRender} from "./itemposts.mjs";
 
 export const fetchItems = async (url) => {
     const token = localStorage.getItem("token");
