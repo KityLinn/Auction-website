@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="./src/js/newitem.js"></script>
     <script type="module" src="./src/js/header.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="./dist/css/index.css">
@@ -58,21 +59,24 @@
                 <h1 class="fw-normal mb-4 text-center">Create New Listing</h1>
                 <form>
                     <div class="form-floating mb-5">
-                        <input type="text" id="imageurl" name="imageurl" class="form-control" placeholder="Item image url" />
-                        <label for="imageurll" class="fw-medium">Item image url</label>
+                        <input type="text" id="item-url" name="imageurl" class="form-control" placeholder="Item image url" />
+                        <label for="item-url" class="fw-medium">Item image url</label>
                     </div>
                     <div class="form-floating mb-5">
-                        <input type="text" id="itemtitle" name="itemtitle" class="form-control" placeholder="Item title" />
-                        <label for="itemtitle" class="fw-medium">Item title</label>
+                        <input type="text" id="item-title" name="itemtitle" class="form-control" placeholder="Item title" />
+                        <label for="item-title" class="fw-medium">Item title</label>
                     </div>
                     <div class="form-floating mb-5">
-                        <textarea  id="itemdesc" name="itemdesc" class="textarea" placeholder="Item description"></textarea>
+                        <textarea  id="item-desc" name="itemdesc" class="textarea" placeholder="Item description"></textarea>
                     </div>
                     <div class="form-floating mb-5">
-                        <input type="text" id="tags" name="tags" class="form-control" placeholder="Tags" />
-                        <label for="tags" class="fw-medium">Tags</label>
+                        <input type="text" id="item-tags" name="tags" class="form-control" placeholder="Tags" />
+                        <label for="item-tags" class="fw-medium">Tags</label>
                     </div>
-                    <button id="listItem" class="btn btn-primary btn-lg text-white" type="submit" >Create Listing</button>
+                    <div class="form-floating mb-5">
+                      <input id="item-expire" type="datetime-local">
+                    </div>
+                    <button id="post-item" class="btn btn-primary btn-lg text-white" type="submit" >Create Listing</button>
                 </form>
                 
 
