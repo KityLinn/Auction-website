@@ -35,13 +35,23 @@ const singleRender = (data) => {
     itemTitle.innerText = title;
     itemDescription.innerText = description;
     itemBy.innerText =seller.name
-    itemBid.innerText= bids[bids.length - 1].amount
+    if (!bids.length) {
+        itemBid.innerText="None"
+    }
+    else {
+        itemBid.innerText= bids[bids.length - 1].amount
+
+    }
     itemEnds.innerText = endsAt.substring(0, 10)
-    image.src = media[0]
+    if (!media.length) {
+        image.src = "https://placehold.co/400?text=No+Image+Found"
+    }
+    else {
+        image.src = media[0]
+    }
     image.alt = title
     for (let i = 0; i < bids.length; i++) {
-        bidsAppend.appendChild(bidRender(bids[i]))
-        
+        bidsAppend.appendChild(bidRender(bids[i]))   
       }
 }
 
