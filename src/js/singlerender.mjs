@@ -19,12 +19,12 @@ export const singleRender = (data, singleData) => {
         singleData.image.src = media[0]
     }
     image.alt = title
-    if (bids.length = 0) {
+    if (!bids.length) {
         bidsAppend.innerText = ""
 
     } else {
         for (let i = 0; i < bids.length; i++) {
-            bidsAppend.appendChild(bidRender(bids[i]))   
+            singleData.bidsAppend.appendChild(bidRender(bids[i]))   
           }
     }
 }

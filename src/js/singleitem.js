@@ -27,8 +27,8 @@ const getsingleItem = async (url) => {
 		},
 	});
     const data = await res.json();
+	console.log(data)
     singleRender(data, singleData)
-    console.log(data)
 };
 
 getsingleItem(auctionUrls.listing(ID))
