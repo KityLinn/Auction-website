@@ -32,14 +32,11 @@ export const profileItems =  (data) => {
   let cardBy = container.querySelector(".card-by");
 
   //setter inn data
-  if (!media.length) {
+  if (!media.length && !bids.length) {
     cardTitle.innerText = title
     cardLink.href = `../../singleitem.html?id=${id}`
-    cardBid.innerText = bids[bids.length - 1].amount
     cardBy.innerText = `By: ${seller.name}`
     cardBy.href = `../../profile.html?user=${seller.name}`
-    
-
   } else if (!bids.length) {
     cardTitle.innerText = title
     cardImage.src = media[0]
@@ -47,6 +44,13 @@ export const profileItems =  (data) => {
     cardLink.href = `../../singleitem.html?id=${id}`
     cardBid.innerText = "None"
     cardBy.innerText = `By: ${seller.name}`
+    cardBy.href = `../../profile.html?user=${seller.name}`
+
+  } else if (!media.length) {
+    cardTitle.innerText = title
+    cardLink.href = `../../singleitem.html?id=${id}`
+    cardBy.innerText = `By: ${seller.name}`
+    cardBid.innerText = bids[bids.length - 1].amount
     cardBy.href = `../../profile.html?user=${seller.name}`
 
   } else {
