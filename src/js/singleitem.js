@@ -1,6 +1,10 @@
 import { auctionUrls } from "./module.mjs";
-import {singleRender} from "./singlerender.mjs"
+import {singleRender} from "./singlerender.mjs";
 
+const token = localStorage.getItem("token");
+
+const bidsButton = document.querySelector("#bid-button");
+const bidAmount = document.querySelector("#bidamount");
 const itemTitle = document.querySelector("#item-title");
 const itemEnds = document.querySelector("#item-ends");
 const itemBy = document.querySelector("#item-by");
@@ -11,6 +15,10 @@ const bidsAppend = document.querySelector("#bids")
 
 let queryData = {itemTitle, itemEnds, itemBy, itemBid, itemDescription, image, bidsAppend}
 
+if (!token) {
+    bidsButton.classList.add("d-none")
+}
+
 
 
 const queryString = document.location.search;
@@ -18,7 +26,6 @@ const params = new URLSearchParams(queryString);
 const ID = params.get("id");
 
 const getsingleItem = async (url) => { 
-    const token = localStorage.getItem("token");
     const res = await fetch(url, {
 		method: "GET",
 		headers: {
@@ -33,8 +40,6 @@ const getsingleItem = async (url) => {
 
 getsingleItem(auctionUrls.listing(ID))
 
-const bidsButton = document.querySelector("#bid-button");
-const bidAmount = document.querySelector("#bidamount");
 
 bidsButton.addEventListener("click", (e) => {
     e.preventDefault()
@@ -47,7 +52,6 @@ bidsButton.addEventListener("click", (e) => {
 });
 
 const adBid = async (bidUrl, bid) => { 
-    const token = localStorage.getItem("token");
     const res = await fetch (bidUrl, {
         method: "POST",
         headers: {

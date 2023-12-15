@@ -1,5 +1,6 @@
-const localUser = localStorage.getItem("user");
+const token = localStorage.getItem("token");
 
+const localUser = localStorage.getItem("user");
 const logoutButtons = document.querySelectorAll(".logout");
 
 export const logoutFunc = ( ) => {
@@ -20,3 +21,14 @@ const profileLink = document.querySelectorAll(".your-profile");
 profileLink.forEach((item) => {
   item.href = `../../profile.html?user=${localUser}`;
 });
+
+if (!token) {
+  profileLink.forEach((item) => {
+  item.classList.add("d-none")
+  })
+  logoutButtons.forEach((item) => {
+    item.classList.add("d-none")
+    })
+
+};
+
