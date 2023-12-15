@@ -33,3 +33,29 @@ const getsingleItem = async (url) => {
 
 getsingleItem(auctionUrls.listing(ID))
 
+const bidsButton = document.querySelector("#bid-button");
+const bidAmount = document.querySelector("#bidamount");
+
+bidsButton.addEventListener("click", (e) => {
+    e.preventDefault()
+    const bid = {
+        amount: parseFloat(bidAmount.value)
+
+    }
+    console.log(bid)
+    adBid(auctionUrls.makeBid(ID), bid)
+});
+
+const adBid = async (bidUrl, bid) => { 
+    const token = localStorage.getItem("token");
+    const res = await fetch (bidUrl, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(bid),
+    });
+    const data = await res.json();
+    console.log(data)
+}
