@@ -1,6 +1,7 @@
 export const singleRender = (data, singleData) => {
 
     let {title, description, endsAt, id, media, seller, bids} = data;
+
     singleData.itemTitle.innerText = title;
     singleData.itemDescription.innerText = description;
     singleData.itemBy.innerText =seller.name
@@ -19,7 +20,6 @@ export const singleRender = (data, singleData) => {
         singleData.image.src = media[0]
         singleData.image.alt = title
     }
-    image.alt = title
     if (!bids.length) {
         singleData.bidsAppend.innerText = ""
 
