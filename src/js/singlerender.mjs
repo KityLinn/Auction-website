@@ -17,10 +17,11 @@ export const singleRender = (data, singleData) => {
     }
     else {
         singleData.image.src = media[0]
+        singleData.image.alt = title
     }
     image.alt = title
     if (!bids.length) {
-        bidsAppend.innerText = ""
+        singleData.bidsAppend.innerText = ""
 
     } else {
         for (let i = 0; i < bids.length; i++) {

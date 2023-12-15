@@ -9,7 +9,7 @@ const itemDescription = document.querySelector("#item-description")
 const image = document.querySelector("#image");
 const bidsAppend = document.querySelector("#bids")
 
-let singleData = {itemTitle, itemEnds, itemBy, itemBid, itemDescription, image, bidsAppend}
+let queryData = {itemTitle, itemEnds, itemBy, itemBid, itemDescription, image, bidsAppend}
 
 
 
@@ -28,7 +28,7 @@ const getsingleItem = async (url) => {
 	});
     const data = await res.json();
 	console.log(data)
-    singleRender(data, singleData)
+    singleRender(data, queryData)
 };
 
 getsingleItem(auctionUrls.listing(ID))
