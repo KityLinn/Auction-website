@@ -1,3 +1,13 @@
+const getHighestBidFromArray = (bids) => {
+    var bid = bids[0];
+    for (var b of bids) {
+      if (bid.amount < b.amount) {
+        bid = b;
+      }
+    }
+    return bid;
+  }
+
 export const singleRender = (data, singleData) => {
 
     let {title, description, endsAt, id, media, seller, bids} = data;
@@ -9,7 +19,7 @@ export const singleRender = (data, singleData) => {
         singleData.itemBid.innerText= "None"
     }
     else {
-        singleData.itemBid.innerText= bids[bids.length - 1].amount
+        singleData.itemBid.innerText= getHighestBidFromArray(bids).amount
 
     }
     singleData.itemEnds.innerText = endsAt.substring(0, 10)
