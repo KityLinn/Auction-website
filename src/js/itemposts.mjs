@@ -32,37 +32,36 @@ export const itemRender =  (data) => {
   let cardBid = container.querySelector(".card-bid");
   let cardBy = container.querySelector(".card-by");
 
-  //setter inn data
-  if (!media.length && !bids.length) {
-    cardTitle.innerText = title
-    cardLink.href = `../../singleitem.html?id=${id}`
-    cardBy.innerText = `By: ${seller.name}`
-    cardBy.href = `../../profile.html?user=${seller.name}`
-  } else if (!bids.length) {
-    cardTitle.innerText = title
-    cardImage.src = media[0]
-    cardImage.alt = title
-    cardLink.href = `../../singleitem.html?id=${id}`
-    cardBid.innerText = "None"
-    cardBy.innerText = `By: ${seller.name}`
-    cardBy.href = `../../profile.html?user=${seller.name}`
 
-  } else if (!media.length) {
-    cardTitle.innerText = title
-    cardLink.href = `../../singleitem.html?id=${id}`
-    cardBy.innerText = `By: ${seller.name}`
+  //setter inn data
+  cardTitle.innerText = title
+  cardBy.href = `../../profile.html?user=${seller.name}`
+  cardLink.href = `../../singleitem.html?id=${id}`
+  cardBy.innerText = `By: ${seller.name}`
+  if (!bids.length) {
+    cardBid.innerText = "None"
+  }
+  else {
     cardBid.innerText = bids[bids.length - 1].amount
-    cardBy.href = `../../profile.html?user=${seller.name}`
+  }
+  if(!media.length) {
+    cardImage.src = "https://placehold.co/400?text=No+Image+Found"
 
   } else {
-    cardTitle.innerText = title
+    cardImage.src = media[0]
+    cardImage.alt = title
+  }
+
+
+  return container
+  };
+
+  /*
+      cardTitle.innerText = title
     cardImage.src = media[0]
     cardImage.alt = title
     cardBid.innerText = bids[bids.length - 1].amount
     cardLink.href = `../../singleitem.html?id=${id}`
     cardBy.innerText = `By: ${seller.name}`
     cardBy.href = `../../profile.html?user=${seller.name}`
-
-  }
-  return container
-  };
+    */
