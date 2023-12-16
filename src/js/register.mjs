@@ -1,4 +1,4 @@
-export const regFunc = async (regUrl, userData) => { 
+export const regFunc = async (regUrl, userData, error) => { 
     const res = await fetch (regUrl, {
         method: "post",
         headers: {
@@ -8,5 +8,24 @@ export const regFunc = async (regUrl, userData) => {
     });
     const data = await res.json();
     console.log(data)
+    if (data.errors) {
+        errorFunc(data.errors, error)
+
+    } else {
+
+    }
 }
 
+const errorFunc =  (data, attach) => {
+    attach.innerHTML = ""
+    let errorContainer = ""
+    for (let i = 0; i < data.length; i++) {
+        errorContainer += createError(data[i])
+      }
+      attach.innerHTML = errorContainer;
+
+ }
+
+ const createError = (data) => {
+    return `<p id="error">${data.message}</p>`
+}

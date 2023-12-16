@@ -1,4 +1,4 @@
-export const loginFunc = async (loginUrl, userData) => { 
+export const loginFunc = async (loginUrl, userData, error) => { 
     const res = await fetch (loginUrl, {
         method: "post",
         headers: {
@@ -8,8 +8,28 @@ export const loginFunc = async (loginUrl, userData) => {
     });
     const data = await res.json();
     console.log(data)
-    localStorage.setItem("token", data.accessToken);
-    localStorage.setItem("user", data.name)
-    window.location.href = "./items.html"
+    if (data.errors) {
+        errorFunc(data.errors, error)
+
+    } else {
+        localStorage.setItem("token", data.accessToken);
+        localStorage.setItem("user", data.name)
+        window.location.href = "./items.html"
+    }
+
 }
 
+
+const errorFunc =  (data, attach) => {
+    attach.innerHTML = ""
+    let errorContainer = ""
+    for (let i = 0; i < data.length; i++) {
+        errorContainer += createError(data[i])
+      }
+      attach.innerHTML = errorContainer;
+
+ }
+
+ const createError = (data) => {
+    return `<p id="error">${data.message}</p>`
+}

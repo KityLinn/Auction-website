@@ -14,6 +14,10 @@ const registerUser = document.querySelector("#reg-name");
 const registerEmail = document.querySelector("#reg-email");
 const registerPassword = document.querySelector("#reg-password");
 
+//error fields
+export const loginError = document.querySelector("#login-error")
+export const regError = document.querySelector("#reg-error")
+
 //login button
 loginButton.addEventListener("click", (e) => {
     e.preventDefault()
@@ -21,7 +25,7 @@ loginButton.addEventListener("click", (e) => {
         email: loginEmail.value,
         password: loginPassword.value,
     };
-    loginFunc(auctionUrls.login, userLogin)
+    loginFunc(auctionUrls.login, userLogin, loginError)
 });
 
 //register button
@@ -32,6 +36,6 @@ registerButton.addEventListener("click", (e) => {
         email: registerEmail.value,
         password: registerPassword.value,
     };
-    regFunc(auctionUrls.register, userReg)
+    regFunc(auctionUrls.register, userReg, regError)
 })
 
