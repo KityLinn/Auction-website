@@ -1,8 +1,9 @@
 import { auctionUrls } from "./module.mjs";
 import {itemRender} from "./itemposts.mjs";
 
+const token = localStorage.getItem("token");
+
 export const fetchItems = async (url) => {
-    const token = localStorage.getItem("token");
     const res = await fetch(url, {
       method: "GET",
       headers: {
@@ -20,5 +21,3 @@ export const fetchItems = async (url) => {
 };
 
 fetchItems(auctionUrls.listings(10))
-
-
