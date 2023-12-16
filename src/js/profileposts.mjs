@@ -20,7 +20,8 @@ export const profileItems =  (data) => {
 
   //lage DOM element som skal settes inn senere
   let container = document.createElement('div');
-  container.classList.add("col-md-3")
+  container.classList.add("col-lg-3")
+  container.classList.add("col-md-4")
   container.classList.add("col-sm-6")
   container.innerHTML = itemHtml;
 
