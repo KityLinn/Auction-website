@@ -55,7 +55,16 @@
 
   <main class="container">
     <h1 class="fw-normal mb-4 text-center">Item Listings</h1>
-    <section id="items" class="row row-gap-4 bg-secondary p-4 rounded-2">
+    <form class="d-flex col-sm-10 col-md-8 col-lg-6 mb-5 m-auto" role="search">
+      <input id="item-search" class="form-control me-2  border-2 border-black" type="search" placeholder="Search among items" aria-label="Search">
+      <button id="item-search-button" class="btn border border-2 border-black" type="submit">Search</button>
+    </form>
+    <select name="sort" id="sorting" class="form-select-sm mb-5 m-auto">
+      <option selected disabled value="info">Sort by newest and oldest</option>
+      <option value="desc">Newest</option>
+      <option value="asc">Oldest</option>
+    </select>
+    <section id="items" class="row row-gap-3 rounded-2">
 
     </section>
 
