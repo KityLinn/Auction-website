@@ -1,10 +1,15 @@
 import { auctionUrls } from "./module.mjs";
 import {itemRender} from "./itemposts.mjs";
 
+let page = 0;
+let sortValue = "desc"
+
 const token = localStorage.getItem("token");
 
+// fetches 10 newest items in API
 export const fetchItems = async (url) => {
-    const res = await fetch(url, {
+  let offset = page * 10;
+    const res = await fetch(url + "&offset=" + offset + "&sort=created" + "&sortOrder=" + sortValue, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -21,3 +26,29 @@ export const fetchItems = async (url) => {
 };
 
 fetchItems(auctionUrls.listings(10))
+
+//Sort by newest and oldest
+let sorting = document.querySelector("#sorting")
+sorting.addEventListener("change", (e) => {
+  if (e.target.value == "desc") {
+    sortValue = "desc";
+    page = 0;
+    fetchItems(auctionUrls.listings(10))
+  }
+
+  if (e.target.value == "asc" ) {
+    sortValue = "asc";
+    page = 0
+    fetchItems(auctionUrls.listings(10))
+    
+  }
+})
+
+//Load more button. Loads 10 more items
+const morePosts = document.querySelector("#more");
+morePosts.addEventListener("click", (e) => {
+  e.preventDefault();
+  page++;
+  fetchItems(auctionUrls.listings(10))
+
+});
