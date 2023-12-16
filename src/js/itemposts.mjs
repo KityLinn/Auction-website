@@ -15,6 +15,16 @@ const itemHtml =
   </div>
 `;
 
+const getHighestBidFromArray = (bids) => {
+  var bid = bids[0];
+  for (var b of bids) {
+    if (bid.amount < b.amount) {
+      bid = b;
+    }
+  }
+  return bid;
+}
+
 export const itemRender =  (data) => {
   let {title, id, seller, media, bids} = data;
 
@@ -31,8 +41,9 @@ export const itemRender =  (data) => {
   let cardLink = container.querySelector(".card-link");
   let cardBid = container.querySelector(".card-bid");
   let cardBy = container.querySelector(".card-by");
-
-
+  
+  let highestBid = getHighestBidFromArray(bids)
+  
   //setter inn data
   cardTitle.innerText = title
   cardBy.href = `../../profile.html?user=${seller.name}`
@@ -42,7 +53,7 @@ export const itemRender =  (data) => {
     cardBid.innerText = "None"
   }
   else {
-    cardBid.innerText = bids[bids.length - 1].amount
+    cardBid.innerText = highestBid.amount
   }
   if(!media.length) {
     cardImage.src = "https://placehold.co/400?text=No+Image+Found"
