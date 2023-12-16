@@ -3,6 +3,7 @@ const token = localStorage.getItem("token");
 const localUser = localStorage.getItem("user");
 const logoutButtons = document.querySelectorAll(".logout");
 
+
 export const logoutFunc = ( ) => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
@@ -17,6 +18,7 @@ logoutButtons.forEach(function(button) {
   });
 
 const profileLink = document.querySelectorAll(".your-profile");
+const newItem = document.querySelectorAll(".new-item");
 
 profileLink.forEach((item) => {
   item.href = `../../profile.html?user=${localUser}`;
@@ -29,6 +31,11 @@ if (!token) {
   logoutButtons.forEach((item) => {
     item.classList.add("d-none")
     })
+    newItem.forEach((item) => {
+      item.classList.add("d-none")
+    })
 
 };
+
+
 
