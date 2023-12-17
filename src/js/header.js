@@ -22,7 +22,7 @@ const newItem = document.querySelectorAll(".new-item");
 
 
 profileLink.forEach((item) => {
-  item.href = `../../profile.html?user=${localUser}`;
+  item.href = `./profile.html?user=${localUser}`;
 });
 
 if (!token) {

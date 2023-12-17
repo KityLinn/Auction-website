@@ -46,7 +46,7 @@ export const itemRender =  (data, token) => {
   
   //setter inn data
   cardTitle.innerText = title
-  cardLink.href = `../../singleitem.html?id=${id}`
+  cardLink.href = `./singleitem.html?id=${id}`
   cardBy.innerText = `By: ${seller.name}`
   if (!bids.length) {
     cardBid.innerText = "None"
@@ -64,7 +64,7 @@ export const itemRender =  (data, token) => {
   if (!token) {
     cardBy.href = ``
   } else {
-    cardBy.href = `../../profile.html?user=${seller.name}`
+    cardBy.href = `./profile.html?user=${seller.name}`
 
   }
   return container
