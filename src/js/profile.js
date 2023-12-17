@@ -51,7 +51,7 @@ const loggedUser = (data) => {
 const otherUser = (data) => {
     let {name, avatar, credits} = data;
     userName.innerText = name
-    userCredits.innerText = `Total Credits: ${credits}`
+    userCredits.innerText = ""
     profile.innerText = `${name} Profile`
     yourListings.innerText= `${name} Listings`
     userImg.src = avatar
