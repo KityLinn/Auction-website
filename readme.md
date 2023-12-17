@@ -25,7 +25,7 @@ You can clone the repo from here:
 ```bash
 git clone https://github.com/KityLinn/Auction-website.git
 ```
-npi run i
+npi i
 npm run build
 
 ## dependencies
