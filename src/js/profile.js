@@ -16,6 +16,7 @@ const profile = document.querySelector("#profile");
 const userImg = document.querySelector("#user-img");
 const addAvatar = document.querySelector("#add-avatar")
 const avatarError = document.querySelector("#avatar-error")
+const yourListings = document.querySelector("#your-listings");
 
 const getUser = async (url) => { 
     const token = localStorage.getItem("token");
@@ -43,6 +44,7 @@ const loggedUser = (data) => {
     userCredits.innerText = `Total Credits: ${credits}`
     profile.innerText = `Your Profile`
     userImg.src = avatar
+    yourListings.innerHTML= "Your Listings"
 
  };
 
@@ -51,6 +53,7 @@ const otherUser = (data) => {
     userName.innerText = name
     userCredits.innerText = `Total Credits: ${credits}`
     profile.innerText = `${name} Profile`
+    yourListings.innerText= `${name} Listings`
     userImg.src = avatar
     addAvatar.classList = "d-none"
  };
