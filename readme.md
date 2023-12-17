@@ -12,7 +12,7 @@ It contains:
 
 ## Description
 
-The auction site is aimed at a general audience of adults looking for a serious and easy auctioning experience. Providig easy nagivation and clear content layout
+The auction site is aimed at a general audience of adults looking for a serious and easy auctioning experience. Providig easy nagivation and clear content layout.
 
 
 
