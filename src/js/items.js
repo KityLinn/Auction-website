@@ -21,11 +21,11 @@ export const fetchItems = async (url, token) => {
     let main = document.querySelector("#items");
     main.innerHTML = "";
     for (let i = 0; i < data.length; i++) {
-        main.appendChild(itemRender(data[i]))
+        main.appendChild(itemRender(data[i], token))
       }   
 };
 
-fetchItems(auctionUrls.listings(10))
+fetchItems(auctionUrls.listings(10), token)
 
 //Sort by newest and oldest
 let sorting = document.querySelector("#sorting")

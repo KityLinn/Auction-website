@@ -61,15 +61,12 @@ export const itemRender =  (data, token) => {
     cardImage.src = media[0]
     cardImage.alt = title
   }
-
   if (!token) {
     cardBy.href = ``
   } else {
     cardBy.href = `../../profile.html?user=${seller.name}`
 
   }
-
-
   return container
   };
 
