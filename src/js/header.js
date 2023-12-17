@@ -7,7 +7,7 @@ const logoutButtons = document.querySelectorAll(".logout");
 export const logoutFunc = ( ) => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    window.location.href = "../../index.html"
+    window.location.href = "./index.html"
 }
 
 logoutButtons.forEach(function(button) {

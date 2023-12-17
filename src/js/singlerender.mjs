@@ -10,7 +10,7 @@ const getHighestBidFromArray = (bids) => {
 
 export const singleRender = (data, singleData) => {
 
-    let {title, description, endsAt, id, media, seller, bids} = data;
+    let {title, description, endsAt, media, seller, bids} = data;
 
     singleData.itemTitle.innerText = title;
     singleData.itemDescription.innerText = description;
