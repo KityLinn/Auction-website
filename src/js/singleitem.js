@@ -22,6 +22,7 @@ let queryData = {itemTitle, itemEnds, itemBy, itemBid, itemDescription, image, b
 
 if (!token) {
     bidsButton.classList.add("d-none")
+    bidAmount.classList.add("d-none")
 }
 
 
