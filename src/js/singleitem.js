@@ -15,14 +15,14 @@ const bidsAppend = document.querySelector("#bids")
 let imgContainer = document.querySelector("#carousel-img-container")
 const bidError = document.querySelector("#bid-error")
 const bidSuccess = document.querySelector("#bid-success")
+const bidSection = document.querySelector("#bids-section")
 
 
 
 let queryData = {itemTitle, itemEnds, itemBy, itemBid, itemDescription, image, bidsAppend, imgContainer}
 
 if (!token) {
-    bidsButton.classList.add("d-none")
-    bidAmount.classList.add("d-none")
+    bidSection.classList.add("d-none")
 }
 
 
