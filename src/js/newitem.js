@@ -1,6 +1,7 @@
 import { auctionUrls } from "./module.mjs";
 
-const itemUrl = document.querySelector("#item-url");
+const itemUrl1 = document.querySelector("#item-url-1");
+const itemUrl2 = document.querySelector("#item-url-2");
 const itemTitle = document.querySelector("#item-title")
 const itemDesc = document.querySelector("#item-desc")
 const itemTags = document.querySelector("#item-tags")
@@ -13,8 +14,8 @@ postItem.addEventListener("click", (e) => {
     const item = {
         title: itemTitle.value,
         description: itemDesc.value,
-        tags: itemTags.value,
-        media: itemUrl.value,
+        tags:  [itemTags.value],
+        media: [itemUrl1.value, itemUrl2.value],
         endsAt: itemExpire.value,
     };
     creaListing(auctionUrls.createEntry, item)
@@ -32,6 +33,7 @@ const creaListing = async (itemUrl, itemData) => {
         body: JSON.stringify(itemData),
     });
     const data = await res.json(); 
+    console.log(data)
     if (data.errors) {
         errorFunc(data.errors, newError)
 

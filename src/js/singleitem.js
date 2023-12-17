@@ -13,6 +13,8 @@ const itemDescription = document.querySelector("#item-description")
 const image = document.querySelector("#image");
 const bidsAppend = document.querySelector("#bids")
 let imgContainer = document.querySelector("#carousel-img-container")
+const bidError = document.querySelector("#bid-error")
+const bidSuccess = document.querySelector("#bid-success")
 
 
 
@@ -64,5 +66,25 @@ const adBid = async (bidUrl, bid) => {
         body: JSON.stringify(bid),
     });
     const data = await res.json();
-    console.log(data)
+    if (data.errors) {
+        errorFunc(data.errors, bidError)
+
+    } else {
+        bidSuccess.innerHTML = `<p">Bid Succesful!</p>`
+    }
+}
+
+
+const errorFunc =  (data, attach) => {
+    attach.innerHTML = ""
+    let errorContainer = ""
+    for (let i = 0; i < data.length; i++) {
+        errorContainer += createError(data[i])
+      }
+      attach.innerHTML = errorContainer;
+
+ }
+
+ const createError = (data) => {
+    return `<p id="error">${data.message}</p>`
 }
