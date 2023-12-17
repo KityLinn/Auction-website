@@ -2,7 +2,7 @@ const itemHtml =
 `
   <div class="card text-center">
     <img class="image card-image" src="https://placehold.co/400?text=No+Image+Found"  alt="No Image Found">
-    <h4 class="pt-3"><span class="card-title"></span></h4>
+    <p class="pt-3 h4"><span class="card-title"></span></p>
     <div class="row">
       <div class="col-md-6 col-sm-6">
         <a href="" role="button" class="btn btn-link text-black card-link">View Item</a>
