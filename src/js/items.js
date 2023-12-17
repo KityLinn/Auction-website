@@ -7,7 +7,7 @@ let sortValue = "desc"
 const token = localStorage.getItem("token");
 
 // fetches 10 newest items in API
-export const fetchItems = async (url) => {
+export const fetchItems = async (url, token) => {
   let offset = page * 10;
     const res = await fetch(url + "&offset=" + offset + "&sort=created" + "&sortOrder=" + sortValue, {
       method: "GET",

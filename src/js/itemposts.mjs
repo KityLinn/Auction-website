@@ -25,7 +25,7 @@ const getHighestBidFromArray = (bids) => {
   return bid;
 }
 
-export const itemRender =  (data) => {
+export const itemRender =  (data, token) => {
   let {title, id, seller, media, bids} = data;
 
   //lage DOM element som skal settes inn senere
@@ -46,7 +46,6 @@ export const itemRender =  (data) => {
   
   //setter inn data
   cardTitle.innerText = title
-  cardBy.href = `../../profile.html?user=${seller.name}`
   cardLink.href = `../../singleitem.html?id=${id}`
   cardBy.innerText = `By: ${seller.name}`
   if (!bids.length) {
@@ -61,6 +60,13 @@ export const itemRender =  (data) => {
   } else {
     cardImage.src = media[0]
     cardImage.alt = title
+  }
+
+  if (!token) {
+    cardBy.href = ``
+  } else {
+    cardBy.href = `../../profile.html?user=${seller.name}`
+
   }
 
 
