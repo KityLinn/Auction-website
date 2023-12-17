@@ -12,8 +12,11 @@ const itemBid = document.querySelector("#item-bid");
 const itemDescription = document.querySelector("#item-description")
 const image = document.querySelector("#image");
 const bidsAppend = document.querySelector("#bids")
+let imgContainer = document.querySelector("#carousel-img-container")
 
-let queryData = {itemTitle, itemEnds, itemBy, itemBid, itemDescription, image, bidsAppend}
+
+
+let queryData = {itemTitle, itemEnds, itemBy, itemBid, itemDescription, image, bidsAppend, imgContainer}
 
 if (!token) {
     bidsButton.classList.add("d-none")

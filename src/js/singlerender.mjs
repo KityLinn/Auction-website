@@ -27,8 +27,7 @@ export const singleRender = (data, singleData) => {
         singleData.image.src = "https://placehold.co/400?text=No+Image+Found"
     }
     else {
-        singleData.image.src = media[0]
-        singleData.image.alt = title
+        sliderRender(media, singleData.imgContainer) 
     }
     if (!bids.length) {
         singleData.bidsAppend.innerText = ""
@@ -59,3 +58,20 @@ const bidRender =  (bids) => {
  <p class="p6">Bid: <span class="bid-value"></span></p>
 </div>
 </div>`;
+
+const sliderRender = (media, container) => {
+    const imgHtml = `<div class="carousel-item">
+    <img src="" class="d-block w-100" alt="">
+  </div>`
+
+media.forEach((img) => {
+let elem = document.createElement("div");
+elem.innerHTML = imgHtml;
+elem.querySelector("img").src = img;
+container.appendChild(elem.childNodes[0]);
+});
+container.querySelectorAll(".carousel-item")[0].classList.add("active");
+
+const carousel = new bootstrap.Carousel('#myCarousel');
+
+}
