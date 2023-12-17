@@ -7,7 +7,6 @@ export const loginFunc = async (loginUrl, userData, error) => {
         body: JSON.stringify(userData),
     });
     const data = await res.json();
-    console.log(data)
     if (data.errors) {
         errorFunc(data.errors, error)
 

@@ -17,7 +17,6 @@ export const fetchItems = async (url, token) => {
       },
     }); 
     const data = await res.json();
-    console.log(data)
     let main = document.querySelector("#items");
     main.innerHTML = "";
     for (let i = 0; i < data.length; i++) {
