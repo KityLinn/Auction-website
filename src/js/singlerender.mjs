@@ -24,7 +24,9 @@ export const singleRender = (data, singleData) => {
     }
     singleData.itemEnds.innerText = endsAt.substring(0, 10)
     if (!media.length) {
-        singleData.image.src = "https://placehold.co/400?text=No+Image+Found"
+        singleData.imgContainer.innerHTML = `<div class="carousel-item active">
+        <img src="https://placehold.co/400?text=No+Image+Found" class="d-block w-100" alt="placeholder">
+      </div>`
     }
     else {
         sliderRender(media, singleData.imgContainer) 
