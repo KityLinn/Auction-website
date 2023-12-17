@@ -15,6 +15,7 @@ const userCredits = document.querySelector("#user-credits");
 const profile = document.querySelector("#profile");
 const userImg = document.querySelector("#user-img");
 const addAvatar = document.querySelector("#add-avatar")
+const avatarError = document.querySelector("#avatar-error")
 
 const getUser = async (url) => { 
     const token = localStorage.getItem("token");
@@ -26,7 +27,6 @@ const getUser = async (url) => {
 		},
 	});
     const data = await res.json();
-    console.log(data)
     if (user === localUser) {
         loggedUser(data)
     } else {
@@ -65,7 +65,6 @@ const otherUser = (data) => {
 		},
 	});
     const data = await res.json();
-    console.log(data)
     let main = document.querySelector("#profile-listings");
     main.innerHTML = "";
     for (let i = 0; i < data.length; i++) {
@@ -99,6 +98,24 @@ const avatarFunc = async (avatarUrl, avatarData) => {
         body: JSON.stringify(avatarData),
     });
     const data = await res.json();
-    console.log(data)
+    if (data.errors) {
+        errorFunc(data.errors, avatarError)
+
+    } else {
+
+    }
 }
 
+const errorFunc =  (data, attach) => {
+    attach.innerHTML = ""
+    let errorContainer = ""
+    for (let i = 0; i < data.length; i++) {
+        errorContainer += createError(data[i])
+      }
+      attach.innerHTML = errorContainer;
+
+ }
+
+ const createError = (data) => {
+    return `<p id="error">${data.message}</p>`
+}

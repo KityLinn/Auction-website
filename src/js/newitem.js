@@ -6,6 +6,7 @@ const itemDesc = document.querySelector("#item-desc")
 const itemTags = document.querySelector("#item-tags")
 const itemExpire = document.querySelector("#item-expire")
 const postItem = document.querySelector("#post-item")
+const newError = document.querySelector("#new-error")
 
 postItem.addEventListener("click", (e) => {
     e.preventDefault()
@@ -31,5 +32,24 @@ const creaListing = async (itemUrl, itemData) => {
         body: JSON.stringify(itemData),
     });
     const data = await res.json(); 
-    console.log(data)
+    if (data.errors) {
+        errorFunc(data.errors, newError)
+
+    } else {
+        window.location.href = "./items.html"
+    }
+}
+
+const errorFunc =  (data, attach) => {
+    attach.innerHTML = ""
+    let errorContainer = ""
+    for (let i = 0; i < data.length; i++) {
+        errorContainer += createError(data[i])
+      }
+      attach.innerHTML = errorContainer;
+
+ }
+
+ const createError = (data) => {
+    return `<p id="error">${data.message}</p>`
 }
