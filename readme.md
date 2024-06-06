@@ -25,15 +25,16 @@ You can clone the repo from here:
 ```bash
 git clone https://github.com/KityLinn/Auction-website.git
 ```
-npi i
+```sh
+npm i
+```
+```sh
 npm run build
+```
 
 ## dependencies
-
-bootstrap: "^5.3.2"
-
-
-sass: "^1.69.5"
+-bootsrap: 5.3.2
+-sass: 1.68.5
 
 
 
